@@ -12,14 +12,14 @@ public class Config {
 
     @Bean
     public WebClient webClient(WebClient.Builder builder){
-        return builder.baseUrl("http://localhost:8090")
+        return builder.baseUrl("http://localhost:8091")
                 .build();
     }
 
-    @Bean
-    public IUserRestClient userRestClient(WebClient client){
-        HttpServiceProxyFactory factory = HttpServiceProxyFactory
-                .builderFor(WebClientAdapter.create(client)).build();
-        return factory.createClient(IUserRestClient.class);
-    }
+//    @Bean
+//    public IUserRestClient userRestClient(WebClient client){
+//        HttpServiceProxyFactory factory = HttpServiceProxyFactory
+//                .builderFor(WebClientAdapter.create(client)).build();
+//        return factory.createClient(IUserRestClient.class);
+//    }
 }
