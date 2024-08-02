@@ -2,6 +2,7 @@ package com.cashout.demo.service;
 
 import com.cashout.demo.domain.BalanceRequest;
 import com.cashout.demo.domain.User;
+import com.cashout.demo.domain.cashout.CashoutRequest;
 import com.cashout.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,5 +28,9 @@ public class UserService {
                     user.setBalance(user.getBalance() + newBalance.getBalance());
                     return userRepository.save(user);
                 });
+    }
+
+    public Mono<Boolean> validBalance (User user, CashoutRequest cashoutRequest){
+        return Mono.fromCallable(() -> user.getBalance() >= cashoutRequest.getAmount());
     }
 }

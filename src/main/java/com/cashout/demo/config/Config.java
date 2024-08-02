@@ -1,6 +1,6 @@
 package com.cashout.demo.config;
 
-import com.cashout.demo.service.IUserRestClient;
+import com.cashout.demo.service.IGenericRestClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -16,10 +16,10 @@ public class Config {
                 .build();
     }
 
-//    @Bean
-//    public IUserRestClient userRestClient(WebClient client){
-//        HttpServiceProxyFactory factory = HttpServiceProxyFactory
-//                .builderFor(WebClientAdapter.create(client)).build();
-//        return factory.createClient(IUserRestClient.class);
-//    }
+    @Bean
+    public IGenericRestClient userRestClient(WebClient client){
+        HttpServiceProxyFactory factory = HttpServiceProxyFactory
+                .builderFor(WebClientAdapter.create(client)).build();
+        return factory.createClient(IGenericRestClient.class);
+    }
 }
