@@ -15,9 +15,6 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-//    @Autowired
-//    private IUserRestClient userRestClient;
-
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Mono<User> createUser1(@RequestBody User user){
@@ -33,9 +30,4 @@ public class UserController {
     public Mono<User> updateBalance(@PathVariable String id, @RequestBody BalanceRequest newBalance){
         return userService.updateBalance(id, newBalance);
     }
-
-//    @PostMapping("/self")
-//    public Mono<User> createUser(@RequestBody User user){
-//        return userRestClient.createUser(user);
-//    }
 }
