@@ -1,6 +1,6 @@
 package com.cashout.demo.controller;
 
-import com.cashout.demo.domain.cashout.Cashout;
+import com.cashout.demo.domain.entities.Cashout;
 import com.cashout.demo.service.CashoutService;
 import com.cashout.demo.utils.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +29,6 @@ public class ExternalRestController {
 
     @GetMapping("/transaction-history/user/{userId}")
     public Flux<Cashout> getTransactionHistory(@PathVariable("userId") String userId){
-        return cashoutService.getCashoutByUser(userId);
+        return cashoutService.getCashoutsByUser(userId);
     }
 }

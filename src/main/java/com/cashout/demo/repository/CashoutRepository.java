@@ -1,6 +1,6 @@
 package com.cashout.demo.repository;
 
-import com.cashout.demo.domain.cashout.Cashout;
+import com.cashout.demo.domain.entities.Cashout;
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Flux;

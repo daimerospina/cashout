@@ -1,6 +1,6 @@
 package com.cashout.demo.service;
 
-import com.cashout.demo.domain.cashout.Cashout;
+import com.cashout.demo.domain.entities.Cashout;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.service.annotation.GetExchange;
 import org.springframework.web.service.annotation.PostExchange;

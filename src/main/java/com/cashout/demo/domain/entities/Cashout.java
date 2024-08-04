@@ -1,4 +1,4 @@
-package com.cashout.demo.domain.cashout;
+package com.cashout.demo.domain.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,8 +1,8 @@
 package com.cashout.demo.controller;
 
 import com.cashout.demo.domain.BalanceRequest;
-import com.cashout.demo.domain.User;
-import com.cashout.demo.service.UserService;
+import com.cashout.demo.domain.entities.User;
+import com.cashout.demo.service.interfaces.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +13,7 @@ import reactor.core.publisher.Mono;
 public class UserController {
 
     @Autowired
-    private UserService userService;
+    private IUserService userService;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
